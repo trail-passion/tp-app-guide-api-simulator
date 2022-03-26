@@ -12,9 +12,14 @@ export interface IMessage {
     [key: string]: IMessageItem
 }
 
+export interface IFrameController {
+    back(): void
+    refresh(): void
+}
+
 export function useIFrame(): [
     refIFrame: React.MutableRefObject<null | HTMLIFrameElement>,
-    control: { back: () => void; refresh: () => void }
+    control: IFrameController
 ] {
     const refIFrame = React.useRef<null | HTMLIFrameElement>(null)
     const post = makePost(refIFrame)

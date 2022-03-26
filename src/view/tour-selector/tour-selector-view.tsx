@@ -11,6 +11,7 @@ import "./tour-selector-view.css"
 
 export interface TourSelectorViewProps {
     className?: string
+    onRefresh(this: void): void
 }
 
 export default function TourSelectorView(props: TourSelectorViewProps) {
@@ -26,6 +27,7 @@ export default function TourSelectorView(props: TourSelectorViewProps) {
                 version
             )
             State.update({ applicationPackage })
+            props.onRefresh()
         } catch (ex) {
             console.error("Unable to get application!", ex)
         } finally {
