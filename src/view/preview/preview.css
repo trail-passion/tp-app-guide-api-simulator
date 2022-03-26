@@ -1,0 +1,89 @@
+.tour-page-tour-Preview div > iframe {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    border: none;
+    width: 100%;
+    height: 100%;
+}
+
+.tour-page-tour-Preview div.phone {
+    position: absolute;
+    border-radius: 10px;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+.tour-page-tour-Preview div.phone > header {
+    position: sticky;
+    margin: 0;
+    padding: 0;
+    background-size: contain;
+    background-position: right top;
+    min-height: 160px;
+    top: -128px;
+    z-index: 1;
+    width: 100%;
+}
+.tour-page-tour-Preview div.phone > header > div {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 2rem;
+    padding: 0 1rem;
+}
+.tour-page-tour-Preview div.phone > div {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    padding: 0;
+}
+
+.tour-page-tour-Preview div.phone > div > div.pack {
+    position: relative;
+    display: inline-block;
+    margin: .25rem 0;
+    max-width: 280px;
+    border-radius: .5rem;
+    overflow: hidden;
+}
+.tour-page-tour-Preview div.phone > div > div.pack > div {
+    margin: 0;
+}
+.tour-page-tour-Preview div.phone > div > div.pack > div.img {
+    content: "";
+    width: 280px;
+    height: 140px;
+    background-size: contain;
+}
+.tour-page-tour-Preview div.phone > div > div.pack > div.desc {
+    padding: .5rem;
+}
+.tour-page-tour-Preview div.phone > div > div.pack > div.title {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 1.2rem;
+    font-weight: bold;
+    line-height: 2rem;
+    padding: 0 0 1rem 0;
+}

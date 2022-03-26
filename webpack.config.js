@@ -37,7 +37,7 @@ module.exports = {
         enforceExtension: false,
         alias: {
             "@": Path.resolve(__dirname, "src"),
-            "tp-lib": Path.resolve(__dirname, "../../lib/tp/dist"),
+            "tp-lib": Path.resolve(__dirname, "../tp-website/v5/lib/tp/dist/"),
             react: require.resolve("react"),
         },
     },

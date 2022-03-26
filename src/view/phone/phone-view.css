@@ -1,0 +1,111 @@
+div.tour-view-phone {
+    --out-width: 380px;
+    --out-height: 772px;
+    --in-width: 320px;
+    --in-height: 636px;
+    --in-left: 31px;
+    --in-top: 68px;
+    position: relative;
+    width: var(--out-width);
+    height: var(--out-height);
+    min-width: var(--out-width);
+    min-height: var(--out-height);
+    background-image: url(./portrait.webp);
+    background-size: var(--out-width) var(--out-height);
+}
+div.tour-view-phone.landscape {
+    position: relative;
+    height: var(--out-width);
+    width: var(--out-height);
+    min-height: var(--out-width);
+    min-width: var(--out-height);
+    background-image: url(./landscape.webp);
+    background-size: var(--out-height) var(--out-width);
+}
+div.tour-view-phone > div {
+    transition: filter .6s;
+}
+div.tour-view-phone.qrcode > div {
+    filter: brightness(30%);
+}
+div.tour-view-phone > div,
+div.tour-view-phone > div::after {
+    position: absolute;
+    left: var(--in-left);
+    top: var(--in-top);
+    width: var(--in-width);
+    height: var(--in-height);
+    overflow: auto;
+    padding: 0;
+    border-radius: 12px;
+}
+div.tour-view-phone.landscape > div,
+div.tour-view-phone.landscape > div::after {
+    position: absolute;
+    left: var(--in-top);
+    top: var(--in-left);
+    width: var(--in-height);
+    height: var(--in-width);
+    overflow: auto;
+    padding: 0;
+    border-radius: 10px;
+}
+div.tour-view-phone > div.shadow {
+    box-shadow: 2px 2px 1px inset #000, -1px -1px 1px inset #eef;
+    pointer-events: none;
+}
+
+div.tour-view-phone > nav {
+    position: absolute;
+    bottom: -2rem;
+    left: 0;
+    right: 0;    
+    height: 5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+div.tour-view-phone > footer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 4rem;
+    width: 100%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    pointer-events: none;
+}
+
+div.tour-view-phone > footer > div {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+div.tour-view-phone > footer button {
+    pointer-events: all;
+}
+
+div.tour-view-phone > footer > div.img {
+    flex: 1 1 auto;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s;
+}
+
+div.tour-view-phone.qrcode > footer > div.img {
+    opacity: 1;
+}
+
+div.tour-view-phone > footer img {
+    width: 270px;
+}

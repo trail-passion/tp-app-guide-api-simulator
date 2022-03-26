@@ -1,1 +1,14 @@
-.view-AppView {}
+.view-AppView {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1em;
+}
+
+.view-AppView >* {
+    flex: 1 1 auto;
+} 
+
+.view-AppView >*:first-child {
+    flex: 0 0 auto;
+} 

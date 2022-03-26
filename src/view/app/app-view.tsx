@@ -1,4 +1,6 @@
 import * as React from "react"
+import Preview from "@/view/preview"
+import TourSelector from "@/view/tour-selector"
 import "./app-view.css"
 
 export interface AppViewProps {
@@ -6,16 +8,21 @@ export interface AppViewProps {
 }
 
 export default function AppView(props: AppViewProps) {
-    return <div className={getClassNames(props)}>
-        Hello world!
-    </div>
+    return (
+        <div className={getClassNames(props)}>
+            <Preview />
+            <div>
+                <TourSelector />
+            </div>
+        </div>
+    )
 }
 
 function getClassNames(props: AppViewProps): string {
-    const classNames = ['custom', 'view-AppView']
-    if (typeof props.className === 'string') {
+    const classNames = ["custom", "view-AppView"]
+    if (typeof props.className === "string") {
         classNames.push(props.className)
     }
 
-    return classNames.join(' ')
+    return classNames.join(" ")
 }
