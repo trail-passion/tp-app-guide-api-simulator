@@ -44,7 +44,7 @@ export default function TourSelectorView(props: TourSelectorViewProps) {
             <Options
                 options={{ test: "Test", prod: "Prod" }}
                 value={version}
-                onClick={(value) => State.update({ versionType: value })}
+                onChange={(value) => State.update({ versionType: value })}
             />
             <Button label="Load" onClick={handleLoad} />
         </Runnable>

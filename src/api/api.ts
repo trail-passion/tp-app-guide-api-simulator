@@ -1,6 +1,8 @@
+import { ApiSetRating } from "./entry-points/set-rating"
 import { isArray, isObject, isString } from "tp-lib/tools/type-guards"
 import {
     ApiGetAppInfo,
+    ApiGetAverageRating,
     ApiGetImage,
     ApiGetLocation,
     ApiGetPref,
@@ -10,19 +12,21 @@ import {
     ApiSpeak,
 } from "./entry-points"
 
-const VERBOSE_MODE = false
+const VERBOSE_MODE = true
 
 type EntryPoint = (...params: any[]) => Promise<any>
 
 const API: { [key: string]: EntryPoint } = {
     getAppInfo: ApiGetAppInfo,
+    getAverageRating: ApiGetAverageRating,
     getImage: ApiGetImage,
     getLocation: ApiGetLocation,
     getPref: ApiGetPref,
     getStoreVersion: ApiGetStoreVersion,
     getTile: ApiGetTile,
     setPref: ApiSetPref,
-    speak: ApiSpeak
+    setRating: ApiSetRating,
+    speak: ApiSpeak,
 }
 
 export default async function exec(input: string, post: (args: any) => void) {

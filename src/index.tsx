@@ -2,6 +2,7 @@ import * as React from "react"
 import * as ReactDOM from "react-dom"
 import App from "./view/app"
 import LoginService from "tp-lib/service/login"
+import Modal from "tp-lib/ui/modal"
 import Splash from "tp-lib/splash"
 import State from "./state"
 import Theme from "tp-lib/theme"
@@ -21,6 +22,15 @@ async function start() {
         return
     }
     const tours = await ToursService.list()
+    if (!tours || tours.length === 0) {
+        await Modal.error(
+            <div>
+                User <b>{user.nickname}</b> owns no Tour!
+            </div>
+        )
+        await LoginService.logout(true)
+        return
+    }
     const [tour] = tours
     console.log("🚀 [index] tours = ", tours) // @FIXME: Remove this line written on 2022-03-25 at 17:15
     State.update({

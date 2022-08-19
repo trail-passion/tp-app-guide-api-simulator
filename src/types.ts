@@ -69,7 +69,7 @@ export interface IApplicationPackage {
 }
 
 export interface IGeoLocation {
-    status: string  // "off" | "denied" | "unavailable" | "on"
+    status: string // "off" | "denied" | "unavailable" | "on"
     lat: number
     lng: number
     alt: number
@@ -110,3 +110,7 @@ export interface ITour extends IBaseTour {
     }
 }
 
+export interface IAverageRating {
+    rating: number
+    count: number
+}

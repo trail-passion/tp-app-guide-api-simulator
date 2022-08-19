@@ -1,3 +1,4 @@
+const webpack = require("webpack")
 const FS = require("fs")
 const Path = require("path")
 const package = require("./package.json")
@@ -21,7 +22,7 @@ if (typeof package.port !== "number") {
 
 module.exports = {
     cache: {
-        type: "memory"
+        type: "memory",
     },
     output: {
         filename: "scr/[name].[contenthash].js",
@@ -56,26 +57,25 @@ module.exports = {
         // Open WebBrowser.
         open: true,
         port: process.env.PORT || package.port,
-        proxy: {
-            "/tfw": "http://localhost:60000/",
-            "/css": "http://localhost:60000/",
-        },
+        proxy: [
+            {
+                context: ["/tfw", "/css"],
+                target: "https://trail-passion.net/",
+                secure: false,
+                changeOrigin: true,
+            },
+        ],
     },
     plugins: [
-        new CleanWebpackPlugin({
-            // We don't want to remove the "index.html" file
-            // after the incremental build triggered by watch.
-            cleanStaleWebpackAssets: false
-        }),
         new CopyPlugin({
             patterns: [
                 {
                     from: Path.resolve(__dirname, "public"),
-                    filter: async path => {
+                    filter: async (path) => {
                         return !path.endsWith("index.html")
-                    }
-                }
-            ]
+                    },
+                },
+            ],
         }),
         new HtmlWebpackPlugin({
             meta: {
@@ -93,6 +93,12 @@ module.exports = {
             // and not allow any straggling "old" SWs to hang around.
             clientsClaim: true,
             skipWaiting: true,
+        }),
+        new MiniCssExtractPlugin(),
+        new CleanWebpackPlugin({
+            // We don't want to remove the "index.html" file
+            // after the incremental build triggered by watch.
+            cleanStaleWebpackAssets: false,
         }),
     ],
     optimization: {
@@ -117,28 +123,17 @@ module.exports = {
                 test: /\.tsx?$/,
                 use: [
                     {
-                        loader: 'ts-loader',
+                        loader: "ts-loader",
                         options: {
-                            transpileOnly: false
+                            transpileOnly: false,
                         },
                     },
                 ],
-                exclude: /node_modules/
+                exclude: /node_modules/,
             },
             {
                 test: /\.css$/,
-                use: [
-                    {
-                        loader: devMode ? "style-loader" : MiniCssExtractPlugin,
-                        options: {
-                            injectType: "styleTag",
-                        },
-                    },
-                    {
-                        loader: "css-loader",
-                        options: {},
-                    },
-                ],
+                use: [MiniCssExtractPlugin.loader, "css-loader"],
             },
             {
                 test: /\.(png|jpe?g|gif|webp|svg)$/i,
@@ -168,4 +163,4 @@ module.exports = {
             // },
         ],
     },
-};
+}

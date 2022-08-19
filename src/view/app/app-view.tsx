@@ -1,4 +1,5 @@
 import * as React from "react"
+import GpsSimulator from "../gps-simulator"
 import Preview from "@/view/preview"
 import TourSelector from "@/view/tour-selector"
 import { IFrameController } from "../preview/hooks"
@@ -21,6 +22,7 @@ export default function AppView(props: AppViewProps) {
             <Preview onReady={setController} />
             <div>
                 <TourSelector onRefresh={() => controller.refresh()} />
+                <GpsSimulator />    
             </div>
         </div>
     )

@@ -5,5 +5,5 @@ export async function ApiGetPref(key: string): Promise<string> {
 }
 
 export async function ApiSetPref(key: string, value: string): Promise<void> {
-    window.localStorage.setItem(key, value)
+    window.localStorage.setItem(`${STORAGE_PREFIX}${key}`, value)
 }
