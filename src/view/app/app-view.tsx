@@ -22,7 +22,7 @@ export default function AppView(props: AppViewProps) {
             <Preview onReady={setController} />
             <div>
                 <TourSelector onRefresh={() => controller.refresh()} />
-                <GpsSimulator />    
+                <GpsSimulator />
             </div>
         </div>
     )

@@ -1,4 +1,3 @@
-import { ApiSetRating } from "./entry-points/set-rating"
 import { isArray, isObject, isString } from "tp-lib/tools/type-guards"
 import {
     ApiGetAppInfo,
@@ -9,6 +8,8 @@ import {
     ApiSetPref,
     ApiGetStoreVersion,
     ApiGetTile,
+    ApiSetRating,
+    ApiSetUsage,
     ApiSpeak,
 } from "./entry-points"
 
@@ -26,6 +27,7 @@ const API: { [key: string]: EntryPoint } = {
     getTile: ApiGetTile,
     setPref: ApiSetPref,
     setRating: ApiSetRating,
+    setUsage: ApiSetUsage,
     speak: ApiSpeak,
 }
 

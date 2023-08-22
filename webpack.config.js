@@ -38,7 +38,7 @@ module.exports = {
         enforceExtension: false,
         alias: {
             "@": Path.resolve(__dirname, "src"),
-            "tp-lib": Path.resolve(__dirname, "../tp-website/v5/lib/tp/dist/"),
+            "tp-lib": Path.resolve(__dirname, "../tp-website/v5/lib/tp/src/"),
             react: require.resolve("react"),
         },
     },
@@ -56,10 +56,12 @@ module.exports = {
         hot: true,
         // Open WebBrowser.
         open: true,
+        host: "0.0.0.0",
         port: process.env.PORT || package.port,
         proxy: [
             {
                 context: ["/tfw", "/css"],
+                // target: "http://localhost:60000",
                 target: "https://trail-passion.net/",
                 secure: false,
                 changeOrigin: true,

@@ -1,12 +1,15 @@
 import * as React from "react"
 import Expand from "tp-lib/ui/view/expand"
 import Flex from "tp-lib/ui/view/flex"
+import FloatingButton from "tp-lib/ui/view/floating-button"
+import IconZoomIn from "tp-lib/ui/view/icons/zoom-in"
+import IconZoomOut from "tp-lib/ui/view/icons/zoom-out"
 import InputFloat from "tp-lib/ui/view/input/float"
 import MapManager from "tp-lib/map"
 import MapView from "tp-lib/map/view"
 import SimpleCombo from "tp-lib/ui/view/simple-combo"
-import State from "@/state"
 import { IApplicationPackage } from "../../types"
+import { useAppState } from "../../state/state"
 import { useGeoLocation, useGpsMarker } from "./hooks"
 import "./gps-simulator-view.css"
 
@@ -37,10 +40,10 @@ const FAKE_GEOLOCATION: IGeoLocation = {
 }
 
 export default function GpsSimulatorView(props: GpsSimulatorViewProps) {
-    const applicationPackage = State.select((s) => s.applicationPackage)
+    const applicationPackage = useAppState((s) => s.applicationPackage)
     const [expanded, setExpanded] = React.useState(false)
     const [map, setMap] = React.useState<null | MapManager>(null)
-    const [sourceId, setSourceId] = React.useState("")
+    const [sourceId, setSourceId] = React.useState("ignExpress")
     const [geoLocation, updateGeoLocation] = useGeoLocation()
     useGpsMarker(map, geoLocation, updateGeoLocation)
     const handleSourceIdChange = (newId: string) => {
@@ -50,6 +53,19 @@ export default function GpsSimulatorView(props: GpsSimulatorViewProps) {
             if (source) map.source = source
         }
         setSourceId(newId)
+    }
+    const handleZoomIn = () => {
+        if (!map) return
+
+        map.view.zoomIn()
+    }
+    const handleZoomOut = () => {
+        if (!map) return
+
+        map.view.zoomOut()
+    }
+    const handleMapMount = (mapManager) => {
+        setMap(mapManager)
     }
     return (
         <Expand
@@ -87,7 +103,10 @@ export default function GpsSimulatorView(props: GpsSimulatorViewProps) {
                     options={makeMapOptions(applicationPackage)}
                 />
             </Flex>
-            <MapView className="map" onReady={setMap} />
+            <MapView className="map" onReady={handleMapMount}>
+                <FloatingButton icon={IconZoomIn} onClick={handleZoomIn} />
+                <FloatingButton icon={IconZoomOut} onClick={handleZoomOut} />
+            </MapView>
         </Expand>
     )
 }

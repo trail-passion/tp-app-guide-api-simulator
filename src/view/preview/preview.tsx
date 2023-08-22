@@ -1,6 +1,7 @@
 import Phone from "../phone"
 import React, { useEffect } from "react"
 import { IFrameController, useIFrame } from "./hooks"
+import Button from "tp-lib/ui/view/button"
 import "./preview.css"
 
 interface IPreviewProps {

@@ -1,5 +1,4 @@
 import * as React from "react"
-import * as ReactDOM from "react-dom"
 import App from "./view/app"
 import LoginService from "tp-lib/service/login"
 import Modal from "tp-lib/ui/modal"
@@ -7,6 +6,7 @@ import Splash from "tp-lib/splash"
 import State from "./state"
 import Theme from "tp-lib/theme"
 import ToursService from "./service/tours"
+import { createRoot } from "react-dom/client"
 import "./index.css"
 
 async function start() {
@@ -32,7 +32,6 @@ async function start() {
         return
     }
     const [tour] = tours
-    console.log("🚀 [index] tours = ", tours) // @FIXME: Remove this line written on 2022-03-25 at 17:15
     State.update({
         tours: tours,
         applicationId: tour.id,
@@ -41,7 +40,10 @@ async function start() {
             State.select((s) => s.versionType)
         ),
     })
-    ReactDOM.render(<App />, document.getElementById("root"))
+    const root = document.getElementById("root")
+    if (!root) throw Error('Can\'t find any element with id "root"!')
+
+    createRoot(root).render(<App />)
     Splash.hide(500)
 }
 

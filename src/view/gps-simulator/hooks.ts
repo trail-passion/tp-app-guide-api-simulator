@@ -1,6 +1,7 @@
 import * as React from "react"
 import Cursor from "./cursor.png"
 import MapManager from "tp-lib/map"
+import State from "@/state"
 import { IGeoLocation } from "@/types"
 import { IGeoPoint } from "tp-lib/types"
 import { isGeoLocation } from "../../type-guard"
@@ -26,16 +27,16 @@ export function useGpsMarker(
                 size: [31, 31],
             },
         })
-        map.view.centerTo(geoLocation, 1000)
+        // map.view.centerTo(geoLocation, 1000)
     }, [map, geoLocation])
-    React.useEffect(()=>{
+    React.useEffect(() => {
         if (!map) return
 
         const handleTap = (point: IGeoPoint) => {
-            updateGeoLocation({ lat: point.lat, lng: point.lng})
+            updateGeoLocation({ lat: point.lat, lng: point.lng })
         }
-        map.eventTap.add(handleTap)
-        return ()=>map.eventTap.remove(handleTap)
+        map.eventDoubleTap.add(handleTap)
+        return () => map.eventDoubleTap.remove(handleTap)
     }, [map])
 }
 
@@ -53,6 +54,7 @@ export function useGeoLocation(): [
         }
         setGeoLocation(newLocation)
         Storage.set("geo-location", newLocation)
+        State.update({ geoLocation: newLocation })
     }
     return [geoLocation, updateGeoLocation]
 }
