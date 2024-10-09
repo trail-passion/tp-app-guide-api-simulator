@@ -1,0 +1,21 @@
+.tracePainter-SecondaryTracePainter {
+    width: 100%;
+    padding: 0.5em;
+    margin: 0.5em;
+    border-radius: 0.5em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    place-items: center;
+    gap: 0.5em 1em;
+}
+
+.tracePainter-SecondaryTracePainter > div.name {
+    grid-column: 1/4;
+    opacity: 1;
+    font-size: 1em;
+}
+
+.tracePainter-SecondaryTracePainter > div {
+    opacity: 0.5;
+    font-size: 0.8em;
+}

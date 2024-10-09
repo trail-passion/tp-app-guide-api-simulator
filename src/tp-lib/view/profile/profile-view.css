@@ -1,0 +1,31 @@
+.view-ProfileView {
+    background-image: linear-gradient(to top, #d60,#ed0 5%, #7ae,#8bf, #aad3df);
+}
+
+.view-ProfileView.transparent {
+    background-image: none;
+}
+
+.view-ProfileView > canvas,
+.view-ProfileView > div {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    margin: 0;
+}
+
+.view-ProfileView > canvas {
+    left: 0;
+    right: 0;
+    width: 100%;
+}
+
+.view-ProfileView > div {
+    pointer-events: none;
+    content: '.';
+    font-size: 0;
+    border-left: 1px solid #f80;
+    border-right: 1px solid #f80;
+    background-color: #f805;
+}

@@ -10,6 +10,7 @@ import {
     ApiGetTile,
     ApiSetRating,
     ApiSetUsage,
+    ApiShowInBrowser,
     ApiSpeak,
 } from "./entry-points"
 
@@ -28,6 +29,7 @@ const API: { [key: string]: EntryPoint } = {
     setPref: ApiSetPref,
     setRating: ApiSetRating,
     setUsage: ApiSetUsage,
+    showInBrowser: ApiShowInBrowser,
     speak: ApiSpeak,
 }
 

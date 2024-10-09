@@ -1,0 +1,65 @@
+div.tp-view-MarkDownEditor {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    resize: vertical;
+    margin: 0.5rem;
+}
+
+div.tp-view-MarkDownEditor > div.body {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+div.tp-view-MarkDownEditor > div.icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    max-height: 2rem;
+    height: 2rem;
+    gap: 0.5rem;
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+div.tp-view-MarkDownEditor > div.icons .icon {
+    all: unset;
+}
+
+div.tp-view-MarkDownEditor > div.body > div.textarea {
+    position: relative;
+    width: 50%;
+    place-self: stretch;
+}
+
+div.tp-view-MarkDownEditor > div.body > div.textarea > textarea {
+    resize: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    padding: 0.5rem;
+    margin: 0;
+}
+
+div.tp-view-MarkDownEditor > div.body > div.markdown {
+    width: 50%;
+    padding: 0.5rem;
+    min-height: 160px;
+    max-height: 75vh;
+    overflow-y: auto;
+}
+
+div.tp-view-MarkDownEditor > div.body > div.markdown blockquote {
+    background-color: var(--theme-color-screen);
+    color: var(--theme-color-on-screen-opacity-80);
+    border-left: 0.25em solid var(--theme-color-on-screen-opacity-50);
+    padding: 1em;
+}

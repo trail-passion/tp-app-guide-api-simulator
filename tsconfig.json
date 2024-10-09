@@ -12,12 +12,8 @@
         "extendedDiagnostics": false,
         "incremental": false,
         "jsx": "react",
-        "lib": [
-            "dom",
-            "dom.iterable",
-            "es6"
-        ],
-        "module": "CommonJS",
+        "lib": ["dom", "dom.iterable", "es6"],
+        "module": "ESNext",
         "moduleResolution": "node",
         "noImplicitAny": false,
         "noImplicitReturns": false,
@@ -25,7 +21,7 @@
         "outDir": "./dist/",
         "paths": {
             "@/*": ["*"],
-            "tp-lib/*": ["../../tp-website/v5/lib/tp/src/*"],
+            "tp-lib/*": ["tp-lib/*"],
             "*": ["src/*", "node_modules/*"]
         },
         "removeComments": false,
@@ -47,10 +43,5 @@
         "./src/**/*.jpeg",
         "./src/**/*.gif"
     ],
-    "exclude": [
-        "node_modules/",
-        "doc/",
-        "**/*.spec.*",
-        "**/*.test.*"
-    ]
+    "exclude": ["node_modules/", "doc/", "**/*.spec.*", "**/*.test.*"]
 }

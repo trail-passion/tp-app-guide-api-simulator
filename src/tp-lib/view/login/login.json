@@ -1,0 +1,28 @@
+{
+  "en": {
+    "action-login": "Login",
+    "action-forgot-password": "Password forgotten",
+    "action-create-account": "Create an account",
+    "disclaimer": "Your e-mail is only used to send you back your password if you forget it. We don't give it to anybody.",
+    "email-sent": "An email has been sent to the following address. Please also check your spams.",
+    "error": "An unexpected error occured! Please contact the support:",
+    "invalid-email": "Invalid email!",
+    "lang": "Please select your language",
+    "missing-email": "Please enter a valid email address and we will send you vour credentials by email.",
+    "username": "E-Mail:",
+    "password": "Password:"
+  },
+  "fr": {
+    "action-login": "Connexion",
+    "action-forgot-password": "Mot de pass oublié",
+    "action-create-account": "Créer un compte",
+    "disclaimer": "Votre adresse mail nous permet de vous renvoyer votre mot de passe si vous l'oubliez. Nous ne dévoilons cette adresse à personne d'autre.",
+    "email-sent": "Un mail a été envoyé à l'adresse suivante. Veuillez vérifier aussi les spams.",
+    "error": "Une erreur inattendue est apparue ! Veuillez contacter le support :",
+    "invalid-email": "Adresse mail invalide !",
+    "lang": "Veuillez choisir votre langue",
+    "missing-email": "Veuillez entrer une adresse mail valide pour recevoir un mail d'aide à la connexion.",
+    "username": "Adresse mail :",
+    "password": "Mot de passe :"
+  }
+}

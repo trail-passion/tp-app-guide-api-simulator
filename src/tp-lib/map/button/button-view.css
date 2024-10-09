@@ -1,0 +1,35 @@
+.map-ButtonView {
+    width: 300px;
+    height: 300px;
+    border: none;
+    box-shadow: 0 .125rem .25rem #0007;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    border-radius: .5rem;
+    margin: .5rem;
+}
+
+.map-ButtonView > * {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.map-ButtonView > header {
+    bottom: auto;
+    height: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 .5rem;
+    color: #fffe;
+    background-color: #000a;
+    font-variant: small-caps;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

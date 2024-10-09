@@ -1,0 +1,109 @@
+.tpLib-TracePainter-popup {
+    overflow: auto;
+    min-width: 280px;
+    max-width: 640px;
+    max-height: calc(100vh - 8rem);
+}
+
+.tpLib-TracePainter-popup > div.title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.tpLib-TracePainter-popup > div.title > img {
+    flex: 0 0 auto;
+    margin: 0;
+}
+
+.tpLib-TracePainter-popup > div.title > div {
+    flex: 1 1 auto;
+    font-weight: 900;
+    margin: 0 0.5rem;
+}
+
+.tpLib-TracePainter-popup > div.title > div.icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.tpLib-TracePainter-popup div.stats {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.5em 0.5em;
+}
+
+.tpLib-TracePainter-popup div.stats > div.from {
+    grid-column: 1 / -1;
+}
+
+.tpLib-TracePainter-popup div.time {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0.5rem 0;
+}
+
+.tpLib-TracePainter-popup > div.time > * {
+    flex: 0 0 auto;
+}
+
+.tpLib-TracePainter-popup div.location {
+    opacity: 0.5;
+    text-align: center;
+    font-size: 85%;
+}
+
+.tpLib-TracePainter-popup div.location::before {
+    content: "( ";
+}
+
+.tpLib-TracePainter-popup div.location::after {
+    content: " )";
+}
+
+.tpLib-TracePainter-popup > div.time .stop {
+    margin: 0 0.5rem;
+    padding: 0.125rem 0.25rem;
+    background-color: red;
+    color: #fffe;
+    font-family: monospace;
+}
+
+.tpLib-TracePainter-popup img,
+.tpLib-TracePainter-popup video {
+    max-width: 100%;
+    margin: 0;
+}
+
+.tpLib-TracePainter-popup a {
+    border: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+div.tpLib-TracePainter-markerLabel {
+    background-color: #fffd;
+    padding: 0 0.5em;
+    line-height: 1.2em;
+    border-radius: 0.5em;
+    font-weight: bold;
+}
+
+.tpLib-TracePainter-popup .directions {
+    display: block;
+    text-align: center;
+    font-size: 4rem;
+    color: var(--theme-color-primary-5);
+}
+
+.tpLib-TracePainter-popup .directions svg {
+    width: 1em;
+    height: 1em;
+}

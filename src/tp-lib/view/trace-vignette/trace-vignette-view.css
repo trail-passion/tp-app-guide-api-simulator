@@ -1,0 +1,59 @@
+.view-TraceVignetteView {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: .5rem;
+}
+
+.view-TraceVignetteView > * {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+.view-TraceVignetteView > header,
+.view-TraceVignetteView > footer {
+    width: 100%;
+    height: auto;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: .5rem .5rem;
+}
+
+.view-TraceVignetteView > header {
+    background-color: var(--theme-color-primary-dark-opacity-90);
+    color: var(--theme-color-on-primary-dark-opacity-90);
+    top: 0;
+    bottom: auto;
+    font-weight: bolder;
+}
+
+.view-TraceVignetteView > footer {
+    background-color: var(--theme-color-section-opacity-90);
+    color: var(--theme-color-on-section-opacity-90);
+    top: auto;
+    bottom: 0;
+}
+
+.view-TraceVignetteView > footer > div.km:after {
+    opacity: .5;
+    content: " km";
+}
+
+.view-TraceVignetteView > footer > div.asc:after {
+    opacity: .5;
+    content: " ⬈";
+}
+
+.view-TraceVignetteView > footer > div.dsc:after {
+    opacity: .5;
+    content: " ⬊";
+}

@@ -38,8 +38,9 @@ module.exports = {
         enforceExtension: false,
         alias: {
             "@": Path.resolve(__dirname, "src"),
-            "tp-lib": Path.resolve(__dirname, "../tp-website/v5/lib/tp/src/"),
+            "tp-lib": Path.resolve(__dirname, "src/tp-lib"),
             react: require.resolve("react"),
+            reactDOM: require.resolve("react-dom"),
         },
     },
     devtool: "inline-source-map",

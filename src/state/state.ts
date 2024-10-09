@@ -1,7 +1,6 @@
 import * as React from "react"
 import GenericEvent from "tp-lib/tools/generic-event"
-import { IApplicationPackage, IGeoLocation } from "@/types"
-import { ITour } from "./../../dist/tp-app-guide-api-simulator/src/types.d"
+import { IApplicationPackage, IGeoLocation, ITour } from "@/types"
 
 export interface AppState {
     tours: ITour[]
@@ -27,7 +26,7 @@ class State {
             speed: 0,
             altitudeAccuracy: 1000,
             status: "off",
-            timestamp: 0
+            timestamp: 0,
         },
         userName: null,
     }

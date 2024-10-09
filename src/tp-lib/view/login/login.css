@@ -1,0 +1,31 @@
+div.tp-view-login {
+    padding: 0;
+    margin: 0;
+    width: 300px;
+    max-height: calc(100vh - 2rem);
+    max-width: calc(100vw - 1rem);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+div.tp-view-login > main {
+    padding: 1em;
+}
+div.tp-view-login > footer {
+    flex: 1 1 auto;
+    margin: 0;
+    padding: 0.5rem;
+    order: 2;
+    font-size: 85%;
+}
+div.tp-view-login > footer > p {
+    opacity: 0.5;
+    font-size: 80%;
+    max-width: 300px;
+    margin: 0;
+    padding: 1em;
+}
+
+div.tp-view-login .custom.ui-view-input-TextView {
+    margin-bottom: -1rem;
+}

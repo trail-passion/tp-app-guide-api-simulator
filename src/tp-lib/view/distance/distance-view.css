@@ -1,0 +1,8 @@
+.view-DistanceView > small {
+    font-size: 80%;
+    opacity: .5;
+}
+
+.view-DistanceView > span {
+    font-size: 80%;
+}

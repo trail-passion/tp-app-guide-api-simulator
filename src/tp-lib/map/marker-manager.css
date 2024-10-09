@@ -1,0 +1,14 @@
+div.leaflet-tooltip.with-className,
+div.leaflet-tooltip.with-className::after,
+div.leaflet-tooltip.with-className::before {
+    background: none;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+}
+
+div.leaflet-tooltip.clickable {
+    pointer-events: all;
+}

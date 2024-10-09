@@ -1,0 +1,29 @@
+.view-loginButton-LoginInfoView {
+    padding: 0;
+}
+
+.view-loginButton-LoginInfoView > div.center {
+    display: grid;
+    place-items: center;
+}
+
+.view-loginButton-LoginInfoView > header,
+.view-loginButton-LoginInfoView > footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.view-loginButton-LoginInfoView > header {
+    height: 2rem;
+    background-color: var(--theme-color-primary-dark);
+    color: var(--theme-color-on-primary-dark);
+}
+
+
+.view-loginButton-LoginInfoView > footer {
+    height: 4rem;
+    background-color: var(--theme-color-section);
+    color: var(--theme-color-on-section);
+}

@@ -1,0 +1,4 @@
+div.view-RichTextView a {
+    color: var(--theme-color-secondary-5);
+    font-weight: bold;
+}

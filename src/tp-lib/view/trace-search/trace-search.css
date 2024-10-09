@@ -1,0 +1,29 @@
+div.tp-view-TraceSearch {
+    position: relative;
+}
+
+div.tp-view-TraceSearch div.traces {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0;
+    flex-wrap: wrap;
+}
+
+div.tp-view-TraceSearch div.traces > * {
+    flex: 1 1 auto;
+}
+
+div.tp-view-TraceSearch div.filter {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+div.tp-view-TraceSearch div.filter > * {
+    flex: 0 0 300px;
+}

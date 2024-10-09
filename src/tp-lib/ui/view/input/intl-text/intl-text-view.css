@@ -1,0 +1,36 @@
+.ui-view-input-IntlTextView {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0;
+}
+
+.ui-view-input-IntlTextView.wide {
+    display: flex;
+    width: 100%;
+}
+
+.ui-view-input-IntlTextView > * {
+    flex: 1 1 auto;
+}
+
+.ui-view-input-IntlTextView > .flags {
+    flex: 0 0 auto;
+}
+
+.ui-view-input-IntlTextView .button {
+    border-radius: 0 .5em .5em 0;
+    height: 2em;
+    width: 3rem;
+    margin: 0;
+    display: grid;
+    place-items: center;
+    padding: 0 .5em;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.ui-view-input-IntlTextView > div.ui-view-input-TextView {
+    margin-right: 0;
+}

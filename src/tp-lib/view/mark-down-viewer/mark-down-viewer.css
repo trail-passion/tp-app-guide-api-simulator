@@ -1,0 +1,15 @@
+div.tp-view-MarkDownViewer p {
+    border: 0;
+    background: none;
+    padding: 0;
+    opacity: 1;
+}
+
+div.tp-view-MarkDownViewer blockquote {
+    font-family: cursive sans-serif;
+    background-color: var(--theme-color-screen);
+    color: var(--theme-color-on-screen-opacity-80);
+    border-left: 0.25em solid var(--theme-color-on-screen-opacity-50);
+    padding: 1em;
+    margin: 1em 0;
+}

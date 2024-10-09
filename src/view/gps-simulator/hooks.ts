@@ -1,6 +1,6 @@
 import * as React from "react"
 import Cursor from "./cursor.png"
-import MapManager from "tp-lib/map"
+import { MapManager } from "tp-lib/map"
 import State from "@/state"
 import { IGeoLocation } from "@/types"
 import { IGeoPoint } from "tp-lib/types"
@@ -42,7 +42,7 @@ export function useGpsMarker(
 
 export function useGeoLocation(): [
     geoLocation: IGeoLocation,
-    updateGeoLocation: (value: Partial<IGeoLocation>) => void
+    updateGeoLocation: (value: Partial<IGeoLocation>) => void,
 ] {
     const [geoLocation, setGeoLocation] = React.useState<IGeoLocation>(
         getInitialGeoLocation()

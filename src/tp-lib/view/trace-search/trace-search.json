@@ -1,0 +1,16 @@
+{
+  "en": {
+    "group": "Group Name",
+    "id": "Trace ID",
+    "name": "Trace Name",
+    "only-mine": "Only my own traces",
+    "search": "Search by"
+  },
+  "fr": {
+    "group": "Nom du groupe",
+    "id": "Numéro",
+    "name": "Nom de la trace",
+    "only-mine": "Seulement mes propres traces",
+    "search": "Rechercher par"
+  }
+}
