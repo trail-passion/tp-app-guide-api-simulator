@@ -27,7 +27,6 @@ export function useGpsMarker(
                 size: [31, 31],
             },
         })
-        // map.view.centerTo(geoLocation, 1000)
     }, [map, geoLocation])
     React.useEffect(() => {
         if (!map) return

@@ -3,6 +3,7 @@ import GpsSimulator from "../gps-simulator"
 import Preview from "@/view/preview"
 import TourSelector from "@/view/tour-selector"
 import { IFrameController } from "../preview/hooks"
+
 import "./app-view.css"
 
 export interface AppViewProps {

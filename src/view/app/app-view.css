@@ -1,14 +1,21 @@
 .view-AppView {
     display: flex;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: stretch;
     gap: 1em;
+    height: 100%;
 }
 
-.view-AppView >* {
+.view-AppView > * {
     flex: 1 1 auto;
-} 
+}
 
-.view-AppView >*:first-child {
+.view-AppView > *:first-child {
     flex: 0 0 auto;
-} 
+}
+
+.view-AppView > *:last-child {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 1em;
+}

@@ -11,6 +11,7 @@ import SimpleCombo from "tp-lib/ui/view/simple-combo"
 import { IApplicationPackage } from "../../types"
 import { useAppState } from "../../state/state"
 import { useGeoLocation, useGpsMarker } from "./hooks"
+
 import "./gps-simulator-view.css"
 
 export interface GpsSimulatorViewProps {
@@ -41,7 +42,6 @@ const FAKE_GEOLOCATION: IGeoLocation = {
 
 export default function GpsSimulatorView(props: GpsSimulatorViewProps) {
     const applicationPackage = useAppState((s) => s.applicationPackage)
-    const [expanded, setExpanded] = React.useState(false)
     const [map, setMap] = React.useState<null | MapManager>(null)
     const [sourceId, setSourceId] = React.useState("ignExpress")
     const [geoLocation, updateGeoLocation] = useGeoLocation()
@@ -68,12 +68,7 @@ export default function GpsSimulatorView(props: GpsSimulatorViewProps) {
         setMap(mapManager)
     }
     return (
-        <Expand
-            className={getClassNames(props)}
-            label="GPS Simulator"
-            value={expanded}
-            onChange={setExpanded}
-        >
+        <div className={getClassNames(props)}>
             <Flex justifyContent="flex-start" alignItems="center" wrap="wrap">
                 <SimpleCombo
                     label="GPS Status"
@@ -107,7 +102,7 @@ export default function GpsSimulatorView(props: GpsSimulatorViewProps) {
                 <FloatingButton icon={IconZoomIn} onClick={handleZoomIn} />
                 <FloatingButton icon={IconZoomOut} onClick={handleZoomOut} />
             </MapView>
-        </Expand>
+        </div>
     )
 }
 
