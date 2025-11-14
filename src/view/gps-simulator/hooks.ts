@@ -34,8 +34,8 @@ export function useGpsMarker(
         const handleTap = (point: IGeoPoint) => {
             updateGeoLocation({ lat: point.lat, lng: point.lng })
         }
-        map.eventDoubleTap.add(handleTap)
-        return () => map.eventDoubleTap.remove(handleTap)
+        map.eventTap.add(handleTap)
+        return () => map.eventTap.remove(handleTap)
     }, [map])
 }
 

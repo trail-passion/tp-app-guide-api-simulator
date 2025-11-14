@@ -97,6 +97,7 @@ export default function GpsSimulatorView(props: GpsSimulatorViewProps) {
                     onChange={handleSourceIdChange}
                     options={makeMapOptions(applicationPackage)}
                 />
+                <p>Tap the map to move the GPS location</p>
             </Flex>
             <MapView className="map" onReady={handleMapMount}>
                 <FloatingButton icon={IconZoomIn} onClick={handleZoomIn} />
